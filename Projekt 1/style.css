@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 65px;
+    /*background-color: #2d2d2d;*/
+    font-family: 'Playfair Display', serif;
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.logo_green {
+    color: #7dbc00;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #7dbc00;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.rozwin {
+    display: none;
+    cursor: pointer; <!-- pojawia sie pointer po najechaniu -->
+}
+
+.rozwin div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Zmniejsza sie ekran, nawigacja sie bardziej rozwija*/
+@media screen and (max-width: 1024px){
+    .nav-links {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        background-color: #2d2d2d;
+    }
+
+    .nav-links {
+        position: fixed;
+        height: 30%;
+        top: 65px;
+        background-color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%); <!-- ukrywa pasek jak nie jest klikniety -->
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+/*<!-- pojawia sie opcja rozwijania i blokuje sie -->*/
+    .rozwin {
+        display: block;
+    }
+
+    .split3-in-section1 {
+        width: 100%;
+    }
+}
+
+.nav-active-rozwijanie {
+    transform: translateX(0%);
+}
+
+@keyframes navRozwijanie {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .linia1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .linia2 {
+    opacity: 0;
+}
+.toggle .linia3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (min-width: 769px) {
+    .nav-active-zmiana-koloru {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 65px;
+        background-color: #2d2d2d;
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+body .header__bg {
+    width: 100%;
+    height: 100vh;
+    background-image: url("tlo.jpg");
+    background-size: cover;
+    background-position: 0 0;
+    background-origin: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+/*<!--przyciemnia obraz tła -->*/
+    background-blend-mode: darken;
+}
+
+body .header__slogan {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+}
+
+.section1 {
+    height: 1000px;
+    background-color: white;
+}
+
+.section1-header {
+    margin-top: 120px;
+    font-size: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    color: #7dbc00;
+}
+
+.split3-in-section1 {
+    margin-top: 50px;
+    float: left;
+    width: 33.33%;
+    height: 230px;
+    padding: 10px;
+    align-items: center;
+}
+
+.section1::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen {
+
+}
