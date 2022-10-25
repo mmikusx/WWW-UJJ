@@ -15,16 +15,6 @@ nav {
     font-family: 'Playfair Display', serif;
 }
 
-.logo {
-    color: rgb(226, 226, 226);
-    letter-spacing: 2px;
-    font-size: 25px;
-}
-
-.logo_green {
-    color: #7dbc00;
-}
-
 .nav-links {
     display: flex;
     justify-content: space-around;
