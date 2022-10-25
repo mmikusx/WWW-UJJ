@@ -180,20 +180,17 @@ body .header__slogan {
 }
 
 .split3-in-section1 {
+    display: flex;
     margin-top: 50px;
-    float: left;
     width: 33.33%;
     height: 230px;
     padding: 10px;
     align-items: center;
+    justify-content: center;
 }
 
 .section1::after {
     content: "";
     display: table;
     clear: both;
-}
-
-@media screen {
-
 }
