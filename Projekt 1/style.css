@@ -12,6 +12,7 @@ nav {
     align-items: center;
     min-height: 65px;
     font-family: 'Playfair Display', serif;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -26,6 +27,7 @@ nav {
     letter-spacing: 1px;
     font-weight: bold;
     font-size: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .nav-links a:hover {
@@ -168,7 +170,7 @@ body .header__slogan {
     color: #7dbc00;
 }
 
-.section1-header::after {
+.section1-header::after, .section2-header::after, .section3-header::after, .section4-header::after {
     content: '';
     width: 22%;
     left: 50%;
@@ -178,7 +180,7 @@ body .header__slogan {
     display: block;
 }
 
-.section1-containers-parent {
+.section1-containers-parent, .section2-containers-parent, .section3-containers-parent, .section4-containers-parent {
     display: flex;
     flex-wrap: wrap;
 }
@@ -193,7 +195,7 @@ body .header__slogan {
     justify-content: center;
 }
 
-.section1-containers-parent::after {
+.section1-containers-parent::after, .section2-containers-parent::after, .section3-containers-parent::after, .section4-containers-parent {
     content: "";
     display: table;
     clear: both;
@@ -243,22 +245,13 @@ body .header__slogan {
 
 .section2 {
     background-color: #f1f0f0;
-}
-
-.section2-containers-parent {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.section2-containers-parent::after {
-    content: "";
-    display: table;
-    clear: both;
+    height: auto;
 }
 
 .section2-containers-childs {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 50%;
     height: 100px;
     padding: 10px;
@@ -266,23 +259,13 @@ body .header__slogan {
     justify-content: center;
 }
 
-.section2-header {
+.section2-header, .section3-header, .section4-header {
     padding-top: 65px;
     font-size: 50px;
     text-align: center;
     font-weight: bold;
     font-family: "Playfair Display", serif;
     color: #7dbc00;
-}
-
-.section2-header::after {
-    content: '';
-    width: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 2px solid #8c8c8c;
-    position: absolute;
-    display: block;
 }
 
 .section2-text-container {
@@ -331,39 +314,10 @@ body .header__slogan {
     background-color: white;
 }
 
-.section3-header {
-    padding-top: 65px;
-    font-size: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Playfair Display", serif;
-    color: #7dbc00;
-}
-
-.section3-header::after {
-    content: '';
-    width: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 2px solid #8c8c8c;
-    position: absolute;
-    display: block;
-}
-
-.section3-containers-parent {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.section3-containers-parent::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .section3-containers-childs {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 33.33%;
     padding: 10px;
     align-items: center;
@@ -417,4 +371,9 @@ body .header__slogan {
     .section3-containers-childs {
         width: 100%;
     }
+}
+
+.section4 {
+    background-color: #f1f0f0;
+    height: 400px;
 }
