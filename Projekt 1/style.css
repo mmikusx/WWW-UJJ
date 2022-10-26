@@ -11,18 +11,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 65px;
-    /*background-color: #2d2d2d;*/
     font-family: 'Playfair Display', serif;
-}
-
-.logo {
-    color: rgb(226, 226, 226);
-    letter-spacing: 2px;
-    font-size: 25px;
-}
-
-.logo_green {
-    color: #7dbc00;
 }
 
 .nav-links {
@@ -68,7 +57,7 @@ nav {
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
     }
@@ -86,15 +75,15 @@ nav {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        transform: translateX(100%); <!-- ukrywa pasek jak nie jest klikniety -->
-        transition: transform 0.5s ease-in;
+        transform: translateX(100%);
+        /* ukrywa pasek jak nie jest klikniety --> transition: transform 0.5s ease-in;*/
     }
 
     .nav-links li {
         opacity: 0;
     }
 
-/*pojawia sie opcja rozwijania i blokuje sie*/
+    /*pojawia sie opcja rozwijania i blokuje sie*/
     .rozwin {
         display: block;
     }
@@ -149,6 +138,11 @@ body .header__bg {
     background-blend-mode: darken;
 }
 
+.bg-text-wrap {
+    inline-size: auto;
+    overflow-wrap: break-word;
+}
+
 body .header__slogan {
     font-family: 'Playfair Display', serif;
     display: flex;
@@ -161,17 +155,27 @@ body .header__slogan {
 }
 
 .section1 {
-    height: 1000px;
+    height: 400px;
     background-color: white;
 }
 
 .section1-header {
-    margin-top: 120px;
-    font-size: 45px;
+    margin-top: 65px;
+    font-size: 50px;
     text-align: center;
     font-weight: bold;
     font-family: "Playfair Display", serif;
     color: #7dbc00;
+}
+
+.section1-header::after {
+    content: '';
+    width: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #8c8c8c;
+    position: absolute;
+    display: block;
 }
 
 .section1-containers-parent {
@@ -181,9 +185,9 @@ body .header__slogan {
 
 .section1-containers-childs {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 33.33%;
-    height: 230px;
+    height: 210px;
     padding: 10px;
     align-items: center;
     justify-content: center;
@@ -197,4 +201,220 @@ body .header__slogan {
 
 .prevent-select {
     user-select: none; /* Standard syntax */
+}
+
+@media screen and (max-width: 768px){
+
+    body .header__bg {
+        height: 70vh;
+    }
+
+    .section1 {
+        height: auto;
+    }
+
+    .section1-containers-childs {
+        margin-top: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    .section1-header {
+        width: 90%;
+        font-size: 35px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container-title {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    color: #7dbc00;
+}
+
+.container-text {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.section2 {
+    background-color: #f1f0f0;
+}
+
+.section2-containers-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section2-containers-parent::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.section2-containers-childs {
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section2-header {
+    padding-top: 65px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    color: #7dbc00;
+}
+
+.section2-header::after {
+    content: '';
+    width: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #8c8c8c;
+    position: absolute;
+    display: block;
+}
+
+.section2-text-container {
+    text-align: center;
+    height: auto;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section2-container-text {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    color: #8c8c8c;
+}
+
+@media screen and (max-width: 768px){
+    .section2 {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section2-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    .section2-header {
+        width: 90%;
+        font-size: 35px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section2-containers-childs {
+        width: 100%;
+    }
+}
+
+.section3 {
+    background-color: white;
+}
+
+.section3-header {
+    padding-top: 65px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    color: #7dbc00;
+}
+
+.section3-header::after {
+    content: '';
+    width: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #8c8c8c;
+    position: absolute;
+    display: block;
+}
+
+.section3-containers-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section3-containers-parent::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.section3-containers-childs {
+    text-align: center;
+    margin-top: 20px;
+    width: 33.33%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section3-promo-image {
+    border-radius: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
+
+.section3-promo-text {
+    padding-top: 20px;
+    font-family: "Playfair Display", serif;
+    color: #8c8c8c;
+    font-size: 35px;
+}
+
+.section3-promo-see-more {
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    color: #8c8c8c;
+    font-size: 14px;
+    text-align: right;
+}
+
+.section3-promo-see-more:hover {
+    color: #7dbc00;
+}
+
+@media screen and (max-width: 768px){
+    .section3 {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section3-header {
+        width: 90%;
+        padding-top: 0;
+        font-size: 35px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section3-containers-childs {
+        width: 100%;
+    }
 }
