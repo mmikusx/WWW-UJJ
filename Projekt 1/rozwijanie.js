@@ -31,12 +31,9 @@ const navRozwin = () => {
     });
 }
 
-
 const app = () => {
     navZmianaKoloru();
     navRozwin(); //wykonaj funkcje
 }
 
 app();
-
-// # TODO naprawic zmiane na zielony jak sie nie wylaczy menu a zmieni szerokosc na wieksza
