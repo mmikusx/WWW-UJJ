@@ -31,6 +31,7 @@ const navRozwin = () => {
     });
 }
 
+
 const app = () => {
     navZmianaKoloru();
     navRozwin(); //wykonaj funkcje

@@ -99,9 +99,6 @@ nav {
     transform: translateX(0%);
 }
 
-.nav-active-zwijanie {
-    transform: translateX(100%);
-}
 
 @keyframes navRozwijanie {
     from {
