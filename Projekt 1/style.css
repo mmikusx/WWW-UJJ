@@ -121,6 +121,13 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
 @media screen and (min-width: 769px) {
     .nav-active-zmiana-koloru {
         position: fixed;
@@ -437,14 +444,14 @@ body .header__slogan {
 @media screen and (max-width: 826px){
     .section4 {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         margin-left: auto;
         margin-right: auto;
     }
 
     .section4-header {
         width: 90%;
-        padding-top: 0;
+        padding-top: 65px;
         font-size: 35px;
         margin-top: 50px;
         margin-left: auto;
@@ -453,6 +460,7 @@ body .header__slogan {
 
     .section4-containers-childs {
         width: 100%;
+        height: 100%;
     }
 
     .section4-containers-childs1 {

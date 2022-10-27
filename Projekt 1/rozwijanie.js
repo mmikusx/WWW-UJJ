@@ -1,7 +1,7 @@
 const navZmianaKoloru = () => {
     const navbar = document.querySelector('nav');
     window.onscroll = () => {
-        if (window.scrollY > 665) {
+        if (window.scrollY > window.innerHeight - 65) {
             navbar.classList.add('nav-active-zmiana-koloru');
         } else {
             navbar.classList.remove('nav-active-zmiana-koloru');
@@ -29,6 +29,12 @@ const navRozwin = () => {
 
         rozwin.classList.toggle('toggle');
     });
+}
+
+const hideNavOnSmallResolution = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.rozwin').click()
+    }
 }
 
 const app = () => {
