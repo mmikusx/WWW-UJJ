@@ -125,9 +125,10 @@ button {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
 }
+
 @media screen and (min-width: 769px) {
     .nav-active-zmiana-koloru {
         position: fixed;
@@ -141,7 +142,7 @@ button {
     }
 }
 
-body .header__bg {
+.header-bg {
     width: 100%;
     height: 100vh;
     background-image: url("tlo.jpg");
@@ -157,7 +158,7 @@ body .header__bg {
     overflow-wrap: break-word;
 }
 
-body .header__slogan {
+.header-slogan {
     font-family: 'Playfair Display', serif;
     display: flex;
     justify-content: center;
