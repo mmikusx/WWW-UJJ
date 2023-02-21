@@ -19,17 +19,8 @@ function Home() {
 
     return (
         <div className="section3-containers-parent">
-            {listOfPosts.map((value, key) => {
+            {listOfPosts.map((value) => {
                 return (
-                    // <div className="aaa">
-                    //     <div className="post" onClick={() => {
-                    //         history.push(`/post/${value.id}`)
-                    //     }}>
-                    //         <div className="title"> {value.title} </div>
-                    //         <div className="body"> {value.postText} </div>
-                    //         <div className="username"> {value.username} </div>
-                    //     </div>
-                    // </div>
                     <div className="section3-containers-childs">
                             <h3 className="section3-promo-text">{value.title}</h3>
                             <p>{value.postText}</p>
