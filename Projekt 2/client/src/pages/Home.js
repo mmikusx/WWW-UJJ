@@ -33,7 +33,7 @@ function Home() {
                     <div className="section3-containers-childs">
                             <h3 className="section3-promo-text">{value.title}</h3>
                             <p>{value.postText}</p>
-                            <a className="section3-promo-see-more" onClick={() => {
+                            <a href="#/" className="section3-promo-see-more" onClick={() => {
                                 history.push(`/post/${value.id}`);
                             }}>Zobacz ogłoszenie</a>
                     </div>
