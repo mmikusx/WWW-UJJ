@@ -22,11 +22,11 @@ router.post("/login", async (req, res) => {
    const user = await Users.findOne({ where: { username: username }});
 
    if (!user) {
-       res.json({error: "Uzytkownik nie istnieje"});
+       res.json({error: "Uzytkownik o takiej nazwie nie istnieje!"});
    } else {
        bcrypt.compare(password, user.password).then((match) => {
            if (!match) {
-               res.json({error: "Zle haslo"});
+               res.json({error: "Podano zle haslo"});
            } else {
                const accesToken = sign({ username: user.username, id: user.id },
                    "secretToCompMiddleware");

@@ -32,8 +32,26 @@ function App() {
         });
       }
     });
-
+    // eslint-disable-next-line
   }, []);
+
+  function showLogout() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+// Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 
   const logout = () => {
     localStorage.removeItem("accessToken");
@@ -45,18 +63,34 @@ function App() {
         <AuthContext.Provider value={ { authState, setAuthState } }>
           <Router>
             <div className="navbar">
-              <Link to="/">Home page</Link>
-              <Link to="/createpost">Create a post</Link>
-              {!authState.status ? (
-                  <>
-                    <Link to="/login">Logowanie</Link>
-                    <Link to="/registration">Rejestracja</Link>
-                  </>
-              ) : (
-                  <button onClick={logout}>Wyloguj</button>
-              )}
+                  {!authState.status ? (
+                      <>
+                        <div className="notLoggedIn">
+                          <Link to="/"><b>Strona główna</b></Link>
+                          <Link to="/createpost"><b>Dodaj ogłoszenie</b></Link>
+                          <Link to="/login"><b>Logowanie</b></Link>
+                        </div>
+                      </>
+                  ) : (
+                      <>
+                        <div className="notLoggedIn">
+                          <Link to="/"><b>Strona główna</b></Link>
+                          <Link to="/createpost"><b>Dodaj ogłoszenie</b></Link>
+                        </div>
+                        <div className="loggedIn">
 
-              <h1>{authState.username}</h1>
+                          <div className="dropdown">
+                            <button className="dropbtn" onClick={showLogout}>
+                              Witaj,&nbsp;<b><span style={{color: "#ff6700"}}>{authState.username}</span></b>
+                              <i className="fa fa-caret-down"></i>
+                            </button>
+                            <div className="dropdown-content" id="myDropdown">
+                              <label onClick={logout}>Wyloguj</label>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                  )}
             </div>
             <Switch>
               <Route path="/" exact component={ Home }></Route>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
 function Login() {
@@ -24,14 +24,14 @@ function Login() {
     };
     return (
         <div className="loginContainer">
-            <label>Username:</label>
+            <label>Nazwa użytkownika:</label>
             <input
                 type="text"
                 onChange={(event) => {
                     setUsername(event.target.value);
                 }}
             />
-            <label>Password:</label>
+            <label>Hasło:</label>
             <input
                 type="password"
                 onChange={(event) => {
@@ -39,7 +39,9 @@ function Login() {
                 }}
             />
 
-            <button onClick={login}> Login </button>
+            <button onClick={login}> Zaloguj </button>
+            Nie masz konta?
+            <Link to="/registration">Zarejestruj sie!</Link>
         </div>
     );
 }

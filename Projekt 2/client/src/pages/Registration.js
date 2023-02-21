@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 function Registration() {
     const initialValues = {
@@ -9,14 +11,17 @@ function Registration() {
         password: "",
     };
 
+    let history = useHistory();
+
     const validationSchema = Yup.object().shape({
-        username: Yup.string().min(3).max(15).required(),
-        password: Yup.string().min(4).max(20).required(),
+        username: Yup.string().min(3).max(15).required("Musisz podać nazwę użytkownika!"),
+        password: Yup.string().min(4).max(20).required("Musisz podać hasło!"),
     });
 
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/auth", data).then(() => {
             console.log(data);
+            history.push("/login");
         });
     };
 
@@ -27,27 +32,27 @@ function Registration() {
                 onSubmit={onSubmit}
                 validationSchema={validationSchema}
             >
-                <Form className="formContainer">
-                    <label>Username: </label>
+                <Form className="loginContainer">
+                    <label>Nazwa użytkownika: </label>
                     <ErrorMessage name="username" component="span" />
                     <Field
                         autocomplete="off"
                         id="inputCreatePost"
                         name="username"
-                        placeholder="(Ex. John123...)"
+                        placeholder="Wpisz nazwe użytkownika..."
                     />
 
-                    <label>Password: </label>
+                    <label>Hasło: </label>
                     <ErrorMessage name="password" component="span" />
                     <Field
                         autocomplete="off"
                         type="password"
                         id="inputCreatePost"
                         name="password"
-                        placeholder="Your Password..."
+                        placeholder="Wpisz hasło..."
                     />
 
-                    <button type="submit"> Register</button>
+                    <button type="submit">Zarejestruj</button>
                 </Form>
             </Formik>
         </div>

@@ -13,6 +13,26 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        bookCondition: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        writtenInYear: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        bookCover: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        delivery: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     });
 
     Posts.associate = (models) => {
