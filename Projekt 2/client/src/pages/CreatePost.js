@@ -30,6 +30,7 @@ function CreatePost() {
 
     let history = useHistory();
 
+    //check if token is valid and user is logged in
     useEffect( () => {
         if (!localStorage.getItem("accessToken")) {
             alert("Aby dodac recenzje zaloguj sie!");
@@ -38,6 +39,7 @@ function CreatePost() {
         // eslint-disable-next-line
     }, []);
 
+    //create post if logged in
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/posts", data, {
             headers: { accessToken: localStorage.getItem("accessToken")},

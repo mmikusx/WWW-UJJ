@@ -10,6 +10,7 @@ function Login() {
 
     let history =  useHistory();
 
+    //check if username and password is correct and set token for logged in validation
     const login = () => {
         const data = { username: username, password: password };
         axios.post("http://localhost:3001/auth/login", data).then((response) => {

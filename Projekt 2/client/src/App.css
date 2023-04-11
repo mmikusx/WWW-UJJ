@@ -292,7 +292,6 @@ span {
   width: 50%;
   flex: 50%;
   height: auto;
-  /*width: 860px;*/
   display: flex;
   place-items: center;
   flex-direction: column;

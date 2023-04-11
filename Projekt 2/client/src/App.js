@@ -16,6 +16,7 @@ function App() {
     status: false,
   });
 
+  //checking if the logged user is authorizated
   useEffect(() => {
     axios.get("http://localhost:3001/auth/auth", {
       headers: {
@@ -53,6 +54,7 @@ function App() {
     }
   }
 
+  //logout user
   const logout = () => {
     localStorage.removeItem("accessToken");
     setAuthState({username: "", id: 0, status: false});

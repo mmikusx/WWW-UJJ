@@ -12,6 +12,7 @@ function Post() {
 
     let history = useHistory();
 
+    //get post by postId and all comments to this post
     useEffect(() => {
         axios.get(`http://localhost:3001/posts/byID/${id}`).then((response) => {
             setPostObject(response.data);
@@ -23,6 +24,7 @@ function Post() {
         // eslint-disable-next-line
     }, []);
 
+    //if logged in add comment in post
     const addComment = () => {
       axios.post("http://localhost:3001/comments/", { commentBody: newComment, PostId: id}, { headers: { accessToken: localStorage.getItem("accessToken") } })
           .then((response) => {
@@ -36,6 +38,7 @@ function Post() {
       });
     };
 
+    //if logged in delete comment
     const deleteComment = (id) => {
         axios.delete(`http://localhost:3001/comments/${id}`, {
             headers: { accessToken: localStorage.getItem("accessToken") }
@@ -48,6 +51,7 @@ function Post() {
         });
     };
 
+    //if logged in delete post
     const deletePost = (id) => {
         axios
             .delete(`http://localhost:3001/posts/${id}`, {

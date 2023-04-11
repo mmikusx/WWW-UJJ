@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const { sign } = require("jsonwebtoken");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 
+//create user and encrypt his password
 router.post("/", async (req, res) => {
     const { username, password } = req.body;
     bcrypt.hash(password, 10).then((hash) => {
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
     }); //hasowanie hasła
 });
 
+//login and create access token
 router.post("/login", async (req, res) => {
    const { username, password } = req.body;
 
@@ -36,6 +38,7 @@ router.post("/login", async (req, res) => {
    }
 });
 
+//authorization and information about logged user
 router.get('/auth', validateToken, (req, res) => {
     res.json(req.user);
 });

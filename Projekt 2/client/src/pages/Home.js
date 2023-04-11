@@ -5,12 +5,13 @@ import { useHistory } from "react-router-dom";
 
 function Home() {
 
-    // wyswietl na stronie
+    // display on screen
     const [listOfPosts, setListOfPosts] = useState([]);
 
     // changing route
     let history = useHistory();
 
+    //get all posts
     useEffect(() => {
         axios.get("http://localhost:3001/posts").then((response) => {
             setListOfPosts(response.data)
